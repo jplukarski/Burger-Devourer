@@ -1,0 +1,49 @@
+<div class="row">
+    <div class="col just-made">
+        <h2>Burgers that have not been devoured</h2>
+        <hr>
+        <ul>
+            {{#each burgers}}
+            {{#unless devoured}}
+            <li>{{burger_name}}
+                <button class="devour" data-id="{{id}}" data-devour="{{devour}}">Devour</button>
+            </li>
+            {{/unless}}
+            {{/each}}
+        </ul>
+        <hr>
+    </div>
+    <div class="col just-devoured">
+        <h2>Burgers that have been devoured</h2>
+        <hr>
+        <ul>
+            {{#each burgers}}
+            {{#if devoured}}
+            <li>{{burger_name}}</li>
+            {{/if}}
+            {{/each}}
+        </ul>
+        <hr>
+    </div>
+</div>
+
+
+<div class="row col-md-6" id="order">
+    <div class="col">
+        <hr>
+        <h2 id="order-title">Order a burger</h2>
+        <div id="order-box">
+            <form class="create-form">
+                <div class="form-group">
+                    <label for="burg">Burger:</label>
+                    <input type="text" id="burg" name="burger_name">
+
+                    <button type="submit">Add a burger</button>
+                </div>
+        </div>
+        <hr>
+    </div>
+</div>
+
+
+</form>
